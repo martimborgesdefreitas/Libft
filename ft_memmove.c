@@ -5,24 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 21:31:30 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/02 21:31:30 by marvin           ###   ########.fr       */
+/*   Created: 2024/12/02 21:46:27 by marvin            #+#    #+#             */
+/*   Updated: 2024/12/02 21:46:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*source;
-	unsigned char	*copy;
+	size_t				i;
+	unsigned char		*new;
+	const unsigned char	*source;
 
-	i = 0;
-	source = (unsigned char *)src;
-	copy = (unsigned char *)dest;
-	while (i < n)
+	new = (unsigned char *)dest;
+	source = (const unsigned char *)src;
+	if (new > source && new < source + n)
 	{
-		copy[i] = source[i];
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			new[i] = source[i];
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			new[i] = source[i];
+			i++;
+		}
 	}
 	return (dest);
 }
