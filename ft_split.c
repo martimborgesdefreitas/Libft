@@ -12,14 +12,14 @@
 
 #include <stdlib.h>
 
-int	is_del(char a, char c)
+static int	is_del(char a, char c)
 {
 	if (a == c)
 		return (1);
 	return (0);
 }
 
-int	word_count(const char *s, char c)
+static int	word_count(const char *s, char c)
 {
 	int	i;
 	int	words;
@@ -42,7 +42,7 @@ int	word_count(const char *s, char c)
 	return (words);
 }
 
-int	word_len(const char *s, char c)
+static int	word_len(const char *s, char c)
 {
 	int	len;
 
@@ -52,14 +52,14 @@ int	word_len(const char *s, char c)
 	return (len);
 }
 
-const char	*skip_del(const char *s, char c)
+static const char	*skip_del(const char *s, char c)
 {
 	while (*s != '\0' && is_del(*s, c) == 1)
 		s++;
 	return (s);
 }
 
-char	*ft_strncpy(char *dest, const char *s, unsigned int n)
+static char	*ft_strncpy(char *dest, const char *s, unsigned int n)
 {
 	unsigned int	i;
 

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	is_set(char a, const char *set)
+static int	is_set(char a, const char *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	is_set(char a, const char *set)
 	return (0);
 }
 
-size_t	ft_strlen(const char *s)
+static size_t	ft_strlen(const char *s)
 {
 	int	i;
 

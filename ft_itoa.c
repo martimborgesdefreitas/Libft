@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	num_len(int n)
+static int	num_len(int n)
 {
 	int	len;
 
