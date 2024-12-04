@@ -10,39 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	size_t	i;
 	size_t	sublen;
 
-	if (s == NULL || start >= ft_strlen(s))
+	if (s == NULL)
 		return (NULL);
-	if (ft_strlen(s) - start < len)
+	if (ft_strlen(s) - start <= len)
 		sublen = ft_strlen(s) - start;
 	else
 		sublen = len;
+	if (start > ft_strlen(s))
+		sublen = 0;
 	sub = malloc((sublen + 1) * sizeof(char));
 	if (sub == NULL)
 		return (NULL);
-	i = 0;
-	while (i < sublen)
-	{
-		sub[i] = s[start + i];
-		i++;
-	}
-	sub[i] = '\0';
+	sub = ft_memcpy(sub, (const void *)(s + start), sublen);
+	sub[sublen] = '\0';
 	return (sub);
 }

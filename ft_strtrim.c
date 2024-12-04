@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	is_set(char a, const char *set)
 {
@@ -24,16 +24,6 @@ static int	is_set(char a, const char *set)
 		i++;
 	}
 	return (0);
-}
-
-static size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
