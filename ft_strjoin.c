@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 
 static size_t	ft_strlen(const char *s)
 {

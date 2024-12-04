@@ -10,25 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
-	char	*ptr;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-		{
-			ptr = &s[i];
-			return (ptr);
-		}
+			return ((char *)&s[i]);
 		i++;
 	}
 	if (c == '\0')
-	{
-		ptr = &s[i];
-		return (ptr);
-	}
+		return ((char *)&s[i]);
 	return (NULL);
 }
