@@ -110,7 +110,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-int	main()
+/*int	main()
 {
 	char	*s = "test,this,function,for,eval";
 	char	c = ',';
@@ -119,17 +119,17 @@ int	main()
 
 	result = ft_split(s, c);
 	i = 0;
-	while (*result[i] != '\0')
+	while (result[i] != NULL)
 	{
 		printf("%s\n", result[i]);
 		i++;
 	}
 	i = 0;
-	while (*result[i] != '\0')
+	while (result[i] != NULL)
 	{
 		free(result[i]);
 		i++;
 	}
 	free(result);
 	return (0);
-}
+}*/
