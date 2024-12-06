@@ -30,3 +30,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*int	main()
+{
+	char	*dest = "this should cause an error";
+	char	*src = NULL;
+
+	ft_memcpy(dest, src, 3);
+	printf("%s\n", dest);
+	return (0);
+}*/

@@ -109,3 +109,27 @@ char	**ft_split(char const *s, char c)
 	arr[i] = NULL;
 	return (arr);
 }
+
+int	main()
+{
+	char	*s = "test,this,function,for,eval";
+	char	c = ',';
+	char	**result;
+	size_t	i;
+
+	result = ft_split(s, c);
+	i = 0;
+	while (*result[i] != '\0')
+	{
+		printf("%s\n", result[i]);
+		i++;
+	}
+	i = 0;
+	while (*result[i] != '\0')
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+}
