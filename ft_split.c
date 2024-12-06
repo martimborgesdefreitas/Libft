@@ -110,7 +110,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/*int	main()
+/*int	main(void)
 {
 	char	*s = "test,this,function,for,eval";
 	char	c = ',';
