@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	start = 0;
-	if (s1 == NULL)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	while (s1[start] != '\0' && is_set(s1[start], set) == 1)
 		start++;
