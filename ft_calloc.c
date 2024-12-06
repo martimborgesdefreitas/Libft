@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*arr;
 	size_t	i;
 
-	if (nmemb > __SIZE_MAX__ / size)
+	if (size != 0 && nmemb > __SIZE_MAX__ / size)
 		return (NULL);
 	arr = malloc(nmemb * size);
 	if (arr == NULL)
@@ -30,3 +30,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (arr);
 }
+/*int	main(void)
+{
+	size_t	nmemb = __SIZE_MAX__;
+	size_t	size = 3;
+	char 	*call;
+
+	call = (char *)ft_calloc(nmemb, size);
+	printf("string is %s, f this\n", call);
+	free(call);
+	return (0);
+}*/
